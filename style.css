@@ -1,0 +1,29 @@
+#inputContainer {
+  width: 30vw;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+#inputContainer input {
+  width: 40px;
+  margin-right: auto;
+}
+#gridContainer {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  width: 30vw;
+  flex-wrap: wrap;
+  outline: 1px solid black;
+}
+
+.gridbox {
+  display: inline-block;
+  flex-grow: 1;
+  aspect-ratio: 1 / 1;
+
+  width: 25%;
+  outline: 1px solid black;
+  outline-offset: -1px;
+}
