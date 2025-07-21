@@ -25,8 +25,13 @@ function generateGrid(count) {
     square.className = "gridbox";
     square.style.width = 100 / count + "%";
     square.style.backgroundColor = `rgba(${randomRGB()}, ${randomRGB()}, ${randomRGB()}, 0)`
-    square.addEventListener("mouseover", (event) => {
-
+    square.addEventListener('mouseover', (event) => {
+      let squareColor = event.target.style.backgroundColor.slice(0, -1).split(" ");
+      let newOpacity = Math.min(parseFloat(squareColor[3]) + .1, 1)
+      squareColor.splice(3, 1, newOpacity + ')')
+      event.target.style.backgroundColor = squareColor.join(" ")
+      console.log(event.target.style.backgroundColor)
+      console.log(squareColor)
     });
     gridContainer.appendChild(square);
   }
